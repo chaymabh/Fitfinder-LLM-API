@@ -5,7 +5,7 @@ from langchain_core.messages.human import HumanMessage
 
 class base_model:
     DEFAULT_CONFIG = {
-        "model_endpoint": "http://localhost:11434/api/generate",
+        "model_endpoint": "http://localhost:5001/api/generate",
         "headers": {"Content-Type": "application/json"},
         "temperature": 0.0,
         "model": "llama2:7b",
