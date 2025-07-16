@@ -8,11 +8,7 @@ class base_model:
         "model_endpoint": "http://localhost:11434/api/generate",
         "headers": {"Content-Type": "application/json"},
         "temperature": 0.0,
-        "model": "llama3:instruct",
-        "top_p": 0.85,
-        "top_k": 50,
-        "num_ctx": 8192,
-        "num_predict": 4096,
+        "model": "llama2:7b",
         "repeat_penalty": 1.0,
         "frequency_penalty": 0.2,
         "seed": None
@@ -52,7 +48,6 @@ class base_model:
         return payload
 
     def invoke(self, messages: list, format_json: bool = False) -> HumanMessage:
-        """Invoke the Ollama model with the provided messages."""
         try:
             payload = self._prepare_payload(messages, format_json)
             response = requests.post(
